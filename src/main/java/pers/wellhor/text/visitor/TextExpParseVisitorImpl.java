@@ -45,6 +45,11 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
     }
 
     @Override
+    public HitResult visitRoot(TextExpParser.RootContext ctx) {
+        return getResult(ctx.getChild(0));
+    }
+
+    @Override
     public HitResult visitBinaryExpression(TextExpParser.BinaryExpressionContext ctx) {
         ParseTree leftTree = ctx.getChild(0);
         ParseTree operatorTree = ctx.getChild(1);

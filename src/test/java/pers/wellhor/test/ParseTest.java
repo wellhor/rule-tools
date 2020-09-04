@@ -39,7 +39,7 @@ public class ParseTest {
      */
     @Test
     public void testParse() {
-        HitResult hitResult = TextAnalysis.parse(CONTEXT, "你好");
+        HitResult hitResult = TextAnalysis.parse(CONTEXT, EXPRESS);
         System.out.println(String.format("%s:%s", EXPRESS, hitResult.isHit() ? "命中" : "未命中"));
     }
 

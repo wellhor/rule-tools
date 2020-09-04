@@ -14,6 +14,7 @@ import pers.wellhor.text.unit.HitResult;
 import pers.wellhor.text.visitor.TextExpParseVisitorImpl;
 import pers.wellhor.text.visitor.TextExpParserBaseVisitor;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -155,7 +156,7 @@ public final class TextAnalysis {
                 return highLight;
             }).collect(Collectors.toList());
         }
-        return null;
+        return Collections.emptyList();
     }
 
     /**
