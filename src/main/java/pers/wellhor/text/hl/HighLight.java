@@ -1,7 +1,5 @@
 package pers.wellhor.text.hl;
 
-import lombok.Data;
-
 /**
  * 高亮
  *
@@ -9,7 +7,6 @@ import lombok.Data;
  * @version 1.0
  * @date 2020/8/26 4:59 下午
  **/
-@Data
 public class HighLight {
 
     /**
@@ -22,4 +19,20 @@ public class HighLight {
      */
     private String snapshot;
 
+
+    public String getExpress() {
+        return express;
+    }
+
+    public void setExpress(String express) {
+        this.express = express;
+    }
+
+    public String getSnapshot() {
+        return snapshot;
+    }
+
+    public void setSnapshot(String snapshot) {
+        this.snapshot = snapshot;
+    }
 }

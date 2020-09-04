@@ -5,12 +5,12 @@ options {
     language = Java;
 }
 
-root :  expression | STAR EOF;
+root :  expression ((AND | OR) expression)+ | expression EOF | STAR EOF;
 
 expression :
-        NOT expression                                                                          # notExpression
+        leftExpr = expression operator = (AND | OR) rightExpr = expression                      # binaryExpression
+        | NOT expression                                                                        # notExpression
         | LPAREN expression RPAREN                                                              # rparenExpression
-        | leftExpr = expression operator = (AND | OR) rightExpr = expression                    # binaryExpression
         | WORD                                                                                  # singleWordExpression
         | ROLE_WORD                                                                             # roleWordExpression
         | afterword                                                                             # afterWordExpression

@@ -1,11 +1,11 @@
 package pers.wellhor.text.visitor;
 
 import org.antlr.v4.runtime.tree.ParseTree;
-import org.apache.commons.lang3.StringUtils;
 import pers.wellhor.text.index.Index;
 import pers.wellhor.text.index.Pair;
 import pers.wellhor.text.parser.TextExpParser;
 import pers.wellhor.text.unit.HitResult;
+import pers.wellhor.text.utils.CommonsUtils;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -121,7 +121,7 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
     @Override
     public HitResult visitSingleWordExpression(TextExpParser.SingleWordExpressionContext ctx) {
         String text = ctx.getText();
-        boolean isHit = StringUtils.isNotBlank(context) && context.contains(text);
+        boolean isHit = CommonsUtils.isNotEmpty(context) && context.contains(text);
         HitResult hitResult = new HitResult().setHit(isHit);
         if(isHit) {
             int index = context.indexOf(text);
@@ -207,7 +207,7 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
         // ②然后从你好到啊 中 去掉所有表达式词语 最多只能剩10个字 多了则为距离超出
         Map<String, List<Index>> indexMap = new HashMap<>();
         for (int i = 0; i < words.length - 1; i++) {
-            if(StringUtils.isNotBlank(words[i])) {
+            if(CommonsUtils.isNotEmpty(words[i])) {
                 Character r = splitRole(words[i]);
 
                 Pair<String, List<Index>> indexPair = indexWord(this.context, words[i]);
@@ -245,7 +245,7 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
      * @return 索引列表
      */
     private Pair<String, List<Index>> indexWord(String context, String word) {
-        if(StringUtils.isNotBlank(word) && StringUtils.isNotBlank(context)) {
+        if(CommonsUtils.isNotEmpty(word) && CommonsUtils.isNotEmpty(context)) {
             String w = splitWord(word);
             Character r = splitRole(word);
             int curs = 0;

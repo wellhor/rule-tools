@@ -4,6 +4,7 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
+import pers.wellhor.text.exception.TextGrammarException;
 import pers.wellhor.text.hl.BitMap;
 import pers.wellhor.text.hl.HighLight;
 import pers.wellhor.text.index.Index;
@@ -30,6 +31,16 @@ public final class TextAnalysis {
     }
 
     /**
+     * 表达式校验
+     *
+     * @param formula 表达式
+     * @throws TextGrammarException 语法解析异常
+     */
+    public static void formulaVerification(String formula) throws TextGrammarException {
+        getParseTree(formula);
+    }
+
+    /**
      * 解析文本表达式
      *
      * @param context 文本内容
@@ -37,13 +48,26 @@ public final class TextAnalysis {
      * @return 文本内容
      */
     public static HitResult parse(String context, String formula) {
+        ParseTree tree = getParseTree(formula);
+        TextExpParserBaseVisitor<HitResult> vtaParserVisitor = new TextExpParseVisitorImpl(context);
+        return vtaParserVisitor.visit(tree);
+    }
+
+    /**
+     * 根据公式 获取语法🌲
+     *
+     * @param formula 公式
+     * @return 语法树
+     * @throws TextGrammarException 语法解析异常
+     */
+    public static ParseTree getParseTree(String formula) throws TextGrammarException {
         CharStream input = CharStreams.fromString(formula);
         TextExpLexer lexer = new TextExpLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         TextExpParser parser = new TextExpParser(tokens);
-        ParseTree tree = parser.root();
-        TextExpParserBaseVisitor<HitResult> vtaParserVisitor = new TextExpParseVisitorImpl(context);
-        return vtaParserVisitor.visit(tree);
+        parser.removeErrorListeners();
+        parser.addErrorListener(TextParseErrorListener.INSTANCE);
+        return parser.root();
     }
 
     /**
