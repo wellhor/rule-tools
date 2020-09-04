@@ -176,7 +176,7 @@ public final class TextAnalysis {
             Index minHit = filteredHit.stream().min(Comparator.comparing(Index::getStart)).orElse(null);
             Index maxHit = filteredHit.stream().max(Comparator.comparing(Index::getEnd)).orElse(null);
             int begin = Math.max(minHit.getStart() - 5, 0);
-            int end = Math.max(minHit.getStart() + defHLSize, maxHit.getEnd());
+            int end = Math.min(Math.max(minHit.getStart() + defHLSize, maxHit.getEnd()), context.length());
             String highLightStr = context.substring(begin, end);
             BitMap bitMap = new BitMap(highLightStr.length());
             filteredHit.forEach(hc -> {
