@@ -1,6 +1,7 @@
 # RuleTools
 
 [![RuleTools v0.0.2](https://img.shields.io/badge/RuleTools-v0.0.2-orange)](https://github.com/wellhor/RuleTools)
+[![JitPack](https://www.jitpack.io/v/wellhor/RuleTools.svg)](https://www.jitpack.io/#wellhor/RuleTools)
 [![Java 8+](https://img.shields.io/badge/java-8+-4c7e9f.svg)](http://java.oracle.com)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/wellhor/RuleTools/blob/master/LICENSE)
 [![Antlr4](https://img.shields.io/badge/anltr-v4-yellow)](https://github.com/antlr/antlr4)

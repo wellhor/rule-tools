@@ -184,7 +184,7 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
                 }
                 // 距离超出 最后一个词的最后一个字 - 减去当前的词的 第一个字的距离 如果大于最大距离 则判断为超过距离
                 if(!indexStack.isEmpty() && (indexStack.get(0).getEnd() - index.getStart() >= maxDistance)) {
-                    return null;
+                    continue;
                 }
 
                 indexStack.push(index);
