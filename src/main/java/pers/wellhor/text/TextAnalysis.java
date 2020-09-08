@@ -5,6 +5,7 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import pers.wellhor.text.exception.TextGrammarException;
+import pers.wellhor.text.exception.TextParseErrorListener;
 import pers.wellhor.text.hl.BitMap;
 import pers.wellhor.text.hl.HighLight;
 import pers.wellhor.text.index.Index;

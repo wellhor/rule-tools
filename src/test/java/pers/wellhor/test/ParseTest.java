@@ -27,9 +27,10 @@ public class ParseTest {
     @Test
     public void testFormulaVerification() {
         try {
-            TextAnalysis.formulaVerification("明天!你好");
+            TextAnalysis.formulaVerification("(A-您好#先生)|(A-你好#先生)|(A-你好#女士)|(A-您好!女士)");
         } catch (TextGrammarException e) {
-            System.out.println(String.format("校验失败: [Line %d,Position %d] %s", e.getLine(), e.getCharPositionInLine(), e.getMessage()));
+            System.out.println(e.printEnglishErrorTip());
+            System.out.println(e.printChineseErrorTip());
         }
     }
 
@@ -86,7 +87,7 @@ public class ParseTest {
     /**
      * 高亮展示
      *
-     * @param highLight
+     * @param highLight 需要展示的高亮内容
      */
     private void showHighLight(HighLight highLight) {
         System.out.println();
