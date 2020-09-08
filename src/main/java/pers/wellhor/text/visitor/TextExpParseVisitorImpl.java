@@ -313,6 +313,11 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
             lastRole = roleStr;
             lastStart = start;
         }
+        if(CommonsUtils.isNotEmpty(lastRole) && lastStart < bits.length) {
+            for (int i = lastStart; i < bits.length; i++) {
+                bits[i] = lastRole.charAt(0);
+            }
+        }
         return bits;
     }
 
