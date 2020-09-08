@@ -46,11 +46,11 @@ public class TextGrammarException extends RuntimeException {
     }
 
     public String printEnglishErrorTip() {
-        return printErrorTip("[A Grammar Error Near Line:%d Position:%d]");
+        return printErrorTip("  [A Grammar Error Near Line:%d Position:%d]");
     }
 
     public String printChineseErrorTip() {
-        return printErrorTip("[第%d行的第%d个字符附近有语法错误]");
+        return printErrorTip("  [第%d行的第%d个字符附近有语法错误]");
     }
 
 
@@ -64,7 +64,8 @@ public class TextGrammarException extends RuntimeException {
             if(CommonsUtils.isNotEmpty(es) && es.length >= line) {
                 String lineText = es[line - 1];
                 builder.append(lineText);
-                builder.insert(position, String.format(" ⇦ " + tipFormat + " ⇨ ", line, position));
+                builder.insert(position, " ⇨ ");
+                builder.append(String.format(tipFormat, line, position));
             }
         }
         return builder.toString();
