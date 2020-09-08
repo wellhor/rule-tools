@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/wellhor/RuleTools/blob/master/LICENSE)
 [![Antlr4](https://img.shields.io/badge/anltr-v4-yellow)](https://github.com/antlr/antlr4)
 
-** RuleTools ** is a powerful formula matcher. in addition, the tools can highlight the formula that locate a content.
+** RuleTools ** is a powerful formula matcher. in addition, the tools can highlight the content where this formula matches.
 
 # How to use 
 
@@ -25,7 +25,7 @@
 ```
 <dependency>
     <groupId>com.github.wellhor</groupId>
-    <artifactId>RuleTools</artifactId>
+    <artifactId>rule-tools</artifactId>
     <version>${lastest.tag.version}</version>
 </dependency>
 ```

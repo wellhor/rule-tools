@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pers.wellhor</groupId>
-    <artifactId>RuleTools</artifactId>
-    <version>0.0.3</version>
+    <artifactId>rule-tools</artifactId>
+    <version>0.0.4</version>
 
     <licenses>
         <license>
