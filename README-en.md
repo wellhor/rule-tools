@@ -5,14 +5,30 @@
 [![Java 8+](https://img.shields.io/badge/java-8+-4c7e9f.svg)](http://java.oracle.com)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/wellhor/RuleTools/blob/master/LICENSE)
 [![Antlr4](https://img.shields.io/badge/anltr-v4-yellow)](https://github.com/antlr/antlr4)
- 
-  中文文档 | [ENGLISH](https://github.com/wellhor/RuleTools/blob/master/README.md)
 
-** RuleTools ** 是一个强大地表达式匹配器，除此之外还能高亮出表达式在文本中命中的位置。
+  ENGLISH | [中文文档](https://github.com/wellhor/RuleTools/blob/master/README-zh.md)
 
-# 如何使用
+** RuleTools ** is a powerful formula matcher. in addition, the tools can highlight the content where this formula matches.
 
-#### 步骤 1. 添加JitPack仓库到你的pom.xml文件里
+# formula
+
+```
+# after expression
+  scientific#organization#5 
+    After scientific, there is the word "organization" distance in five words
+  scientific#organization is same with scientific#organization#10, the default distance is 10
+| or expression
+  scientific|organization
+    it is exisits in the context research or organization  
+() brackets expression
+    To improve expression priority, you can use brackets expression
+! not expression
+    Negates the matching result of the expression after the symbol 
+```
+
+# How to use 
+
+#### Step 1. Add the JitPack repository to your pom.xml file
 
 ```
 <repositories>
@@ -23,7 +39,7 @@
 </repositories>
 ```
 
-### 步骤 2. 添加依赖  [![RuleTools 0.0.7](https://img.shields.io/badge/LatestVersion-0.0.7-orange)](https://github.com/wellhor/RuleTools)
+### Step 2. Add the dependence  [![RuleTools 0.0.7](https://img.shields.io/badge/LatestVersion-0.0.7-orange)](https://github.com/wellhor/RuleTools)
 
 ```
 <dependency>
@@ -33,7 +49,7 @@
 </dependency>
 ```
 
-### 步骤 3. 添加测试  [更多的例子](https://github.com/wellhor/RuleTools/blob/master/src/test/java/pers/wellhor/test/ParseTest.java)
+### Step 3. Create some new test methods  [More Example](https://github.com/wellhor/RuleTools/blob/master/src/test/java/pers/wellhor/test/ParseTest.java)
 
 ```
      private final static String EXPRESS = "((科研#机构#5)|(科学#技术#3)|(科学#杂志#2))&(基因#编辑)";

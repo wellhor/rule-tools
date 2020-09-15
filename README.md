@@ -5,14 +5,32 @@
 [![Java 8+](https://img.shields.io/badge/java-8+-4c7e9f.svg)](http://java.oracle.com)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/wellhor/RuleTools/blob/master/LICENSE)
 [![Antlr4](https://img.shields.io/badge/anltr-v4-yellow)](https://github.com/antlr/antlr4)
+ 
+  中文文档 | [ENGLISH](https://github.com/wellhor/RuleTools/blob/master/README.md)
 
-  ENGLISH | [中文文档](https://github.com/wellhor/RuleTools/blob/master/README-zh.md)
+** RuleTools ** 是一个强大地表达式匹配器，除此之外还能高亮出表达式在文本中命中的位置。
 
-** RuleTools ** is a powerful formula matcher. in addition, the tools can highlight the content where this formula matches.
 
-# How to use 
+# 表达式
 
-#### Step 1. Add the JitPack repository to your pom.xml file
+```
+# 后运算符
+  科研#机构#5 
+    表示文本需要符合 科研之后在五个字之内存在机构这个字
+  科研#机构 等价于 科研#机构#10 默认距离是10 
+| 或运算符
+  科研|机构
+    表示文本需要符合 存在 科研 或者 机构当中的一个词
+() 括号运算符
+    提高表达式优先级 和算术运算中的括号一个效果
+! 非运算符
+    否定掉符号后面的表达式的匹配结果 
+    例如 !科研 则 文中不包含科研 则为命中
+```
+
+# 如何使用
+
+#### 步骤 1. 添加JitPack仓库到你的pom.xml文件里
 
 ```
 <repositories>
@@ -23,7 +41,7 @@
 </repositories>
 ```
 
-### Step 2. Add the dependence  [![RuleTools 0.0.7](https://img.shields.io/badge/LatestVersion-0.0.7-orange)](https://github.com/wellhor/RuleTools)
+### 步骤 2. 添加依赖  [![RuleTools 0.0.7](https://img.shields.io/badge/LatestVersion-0.0.7-orange)](https://github.com/wellhor/RuleTools)
 
 ```
 <dependency>
@@ -33,7 +51,7 @@
 </dependency>
 ```
 
-### Step 3. Create some new test methods  [More Example](https://github.com/wellhor/RuleTools/blob/master/src/test/java/pers/wellhor/test/ParseTest.java)
+### 步骤 3. 添加测试  [更多的例子](https://github.com/wellhor/RuleTools/blob/master/src/test/java/pers/wellhor/test/ParseTest.java)
 
 ```
      private final static String EXPRESS = "((科研#机构#5)|(科学#技术#3)|(科学#杂志#2))&(基因#编辑)";
