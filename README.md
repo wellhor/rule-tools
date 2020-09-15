@@ -8,7 +8,7 @@
  
   中文文档 | [ENGLISH](https://github.com/wellhor/RuleTools/blob/master/README-en.md)
 
-** RuleTools ** 是基于ANTLR4实现的一个强大地表达式匹配器，除此之外还能高亮出表达式在文本中命中的位置。
+** RuleTools ** 是基于ANTLR4实现的一个强大地文本表达式匹配器，除此之外还能高亮出表达式在文本中命中的位置。
 
 
 # 表达式

@@ -8,7 +8,7 @@
 
   ENGLISH | [中文文档](https://github.com/wellhor/RuleTools/blob/master/README.md)
 
-** RuleTools ** is a powerful formula matcher that depends on ANTLR4. in addition, the tools can highlight the content where this formula matches.
+** RuleTools ** is a powerful text formula matcher that depends on ANTLR4. in addition, the tools can highlight the content where this formula matches.
 
 # formula
 
