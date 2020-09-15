@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/wellhor/RuleTools/blob/master/LICENSE)
 [![Antlr4](https://img.shields.io/badge/anltr-v4-yellow)](https://github.com/antlr/antlr4)
 
-  ENGLISH | [中文文档](https://github.com/wellhor/RuleTools/blob/master/README-zh.md)
+  ENGLISH | [中文文档](https://github.com/wellhor/RuleTools/blob/master/README.md)
 
 ** RuleTools ** is a powerful formula matcher. in addition, the tools can highlight the content where this formula matches.
 
@@ -19,7 +19,10 @@
   scientific#organization is same with scientific#organization#10, the default distance is 10
 | or expression
   scientific|organization
-    it is exisits in the context research or organization  
+    The word, "research or organization", it is exisits in the context 
+& and expression
+    scientific&organization
+    These word,"research and organization", is exisits in the context 
 () brackets expression
     To improve expression priority, you can use brackets expression
 ! not expression

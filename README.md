@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/wellhor/RuleTools/blob/master/LICENSE)
 [![Antlr4](https://img.shields.io/badge/anltr-v4-yellow)](https://github.com/antlr/antlr4)
  
-  中文文档 | [ENGLISH](https://github.com/wellhor/RuleTools/blob/master/README.md)
+  中文文档 | [ENGLISH](https://github.com/wellhor/RuleTools/blob/master/README-en.md)
 
 ** RuleTools ** 是一个强大地表达式匹配器，除此之外还能高亮出表达式在文本中命中的位置。
 
@@ -21,6 +21,9 @@
 | 或运算符
   科研|机构
     表示文本需要符合 存在 科研 或者 机构当中的一个词
+& 且运算符
+  科研|机构
+     表示文本中 科研 或者 机构两个词都必须存在
 () 括号运算符
     提高表达式优先级 和算术运算中的括号一个效果
 ! 非运算符
