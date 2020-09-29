@@ -49,7 +49,7 @@ public class ParseTest {
      */
     @Test
     public void testHighLight1() {
-        List<HighLight> highLights = TextAnalysis.highLight(CONTEXT, EXPRESS);
+        List<HighLight> highLights = TextAnalysis.highLight(CONTEXT, "(科研)|(你好)");
         highLights.forEach(this::showHighLight);
     }
 
