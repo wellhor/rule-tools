@@ -205,6 +205,9 @@ public final class TextAnalysis {
                     preCode = bitMap.contain(i);
                 }
             }
+            if(preCode) {
+                highLightBuilder.append(hlSuffix);
+            }
             return highLightBuilder.toString();
         }
         return defaultShow;
