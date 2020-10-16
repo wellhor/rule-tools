@@ -74,7 +74,7 @@ public class ParseTest {
     }
 
     /**
-     * 高亮演4
+     * 高亮演示4
      * 自定义高亮前后缀
      */
     @Test
@@ -83,6 +83,16 @@ public class ParseTest {
         highLights.forEach(this::showHighLight);
     }
 
+    /**
+     * 高亮演示5
+     * 自定义高亮前后缀
+     */
+    @Test
+    public void testHighLight5() {
+        // todo #每一层都有回调+1再遍历的余地
+        List<HighLight> highLights = TextAnalysis.highLight("今天上海天气很好天气很好", "今天#上海#天气#很好");
+        highLights.forEach(this::showHighLight);
+    }
 
     /**
      * 高亮展示
@@ -95,5 +105,6 @@ public class ParseTest {
         System.out.println(highLight.getSnapshot());
         System.out.println();
     }
+
 
 }

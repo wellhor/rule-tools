@@ -114,7 +114,6 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
                 HitResult.HitWord hitWord = new HitResult.HitWord().setExpress(text);
                 hitWord.addIndex(new Index(role, word, index + offset, index + offset + word.length() - 1));
                 hitResult.getHitWords().add(hitWord);
-                return hitResult;
             }
             offset += index + word.length();
             subString = subString.substring(index + word.length());
@@ -129,13 +128,17 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
         boolean isHit = CommonsUtils.isNotEmpty(context) && context.contains(text);
         HitResult hitResult = new HitResult().setHit(isHit);
         if(isHit) {
-            int index = context.indexOf(text);
-            HitResult.HitWord hitWord = new HitResult.HitWord().setExpress(text);
-            hitWord.addIndex(new Index(null, text, index, index + text.length() - 1));
-            hitResult.getHitWords().add(hitWord);
+            int offset = 0, index;
+            while ((index = context.indexOf(text, offset)) >= 0) {
+                HitResult.HitWord hitWord = new HitResult.HitWord().setExpress(text);
+                hitWord.addIndex(new Index(null, text, index, index + text.length() - 1));
+                hitResult.getHitWords().add(hitWord);
+                offset += index + text.length();
+            }
         }
         return hitResult;
     }
+
 
     @Override
     public HitResult visitDefaultDistanceAfter(TextExpParser.DefaultDistanceAfterContext ctx) {
@@ -226,20 +229,31 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
         }
 
         HitResult hitResult = new HitResult();
-        Stack<Index> indexStack = travelWords(indexMap, words, 0, 0, maxDistance);
-        if(indexStack != null && !indexStack.isEmpty()) {
+
+        int lastIndex = 0;
+        Stack<Index> indexStack;
+        while (isNotEmpty(indexStack = travelWords(indexMap, words, 0, lastIndex, maxDistance))) {
             hitResult.setHit(true);
             HitResult.HitWord hitWord = new HitResult.HitWord().setExpress(exp);
             hitResult.getHitWords().add(hitWord);
             List<Index> indices = hitWord.getIndices();
+            boolean isFirstWord = true;
             while (!indexStack.isEmpty()) {
                 Index index = indexStack.pop();
                 if(index != null) {
+                    if(isFirstWord) {
+                        lastIndex = index.getStart() + 1;
+                        isFirstWord = false;
+                    }
                     indices.add(index);
                 }
             }
         }
         return hitResult;
+    }
+
+    private boolean isNotEmpty(Stack<Index> indexStack) {
+        return indexStack != null && !indexStack.isEmpty();
     }
 
     /**
@@ -260,7 +274,7 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
                 if(r == null || r == roleBits[index]) {
                     indices.add(new Index(r, w, index, index + w.length() - 1));
                 }
-                curs = index + w.length() + 1;
+                curs = index + w.length();
             }
             return indices.size() == 0 ? null : new Pair<>(word, indices);
         }
