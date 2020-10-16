@@ -1,5 +1,9 @@
 package pers.wellhor.text.hl;
 
+import pers.wellhor.text.index.Index;
+
+import java.util.List;
+
 /**
  * 高亮
  *
@@ -19,6 +23,11 @@ public class HighLight {
      */
     private String snapshot;
 
+    /**
+     * 高亮片段相关的索引下标
+     */
+    private List<Index> indices;
+
 
     public String getExpress() {
         return express;
@@ -34,5 +43,13 @@ public class HighLight {
 
     public void setSnapshot(String snapshot) {
         this.snapshot = snapshot;
+    }
+
+    public List<Index> getIndices() {
+        return indices;
+    }
+
+    public void setIndices(List<Index> indices) {
+        this.indices = indices;
     }
 }

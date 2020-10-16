@@ -150,9 +150,11 @@ public final class TextAnalysis {
                 List<Index> indices = item.getIndices();
                 if(indices == null || indices.size() == 0) {
                     highLight.setSnapshot(defaultShow != null ? defaultShow : item.getMsg());
+                    highLight.setIndices(Collections.emptyList());
                 } else {
                     String snapshot = parseSnapshot(indices, context, hlPre, hlSuffix, defHLSize, defaultShow);
                     highLight.setSnapshot(snapshot);
+                    highLight.setIndices(indices);
                 }
                 return highLight;
             }).collect(Collectors.toList());
