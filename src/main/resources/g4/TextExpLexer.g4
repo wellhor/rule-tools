@@ -16,10 +16,7 @@ AFTER: '#';
 ROLE_WORD : UPPERCASE '-' WORD;
 
 // 匹配中文字符 英文字符和数字
-WORD : [\u4e00-\u9fa5_a-zA-Z]+;
-
-// 匹配数字
-INT : [0-9]+;
+WORD : [\u4e00-\u9fa5_a-zA-Z0-9]+;
 
 STAR : '*';
 

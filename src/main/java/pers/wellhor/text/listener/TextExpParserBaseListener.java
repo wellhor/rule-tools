@@ -95,30 +95,6 @@ public class TextExpParserBaseListener implements TextExpParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSingleWordExpression(TextExpParser.SingleWordExpressionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterDefaultDistanceAfter(TextExpParser.DefaultDistanceAfterContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDefaultDistanceAfter(TextExpParser.DefaultDistanceAfterContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterDistanceAfter(TextExpParser.DistanceAfterContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDistanceAfter(TextExpParser.DistanceAfterContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

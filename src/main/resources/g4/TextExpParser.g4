@@ -13,10 +13,5 @@ expression :
         | LPAREN expression RPAREN                                                              # rparenExpression
         | WORD                                                                                  # singleWordExpression
         | ROLE_WORD                                                                             # roleWordExpression
-        | afterword                                                                             # afterWordExpression
-;
-
-afterword :
-       (WORD | ROLE_WORD) ((AFTER) (WORD | ROLE_WORD))+                   # defaultDistanceAfter
-       |  (WORD | ROLE_WORD) ((AFTER) (WORD | ROLE_WORD))+ (AFTER) (INT)  # distanceAfter
+        | (WORD | ROLE_WORD) ((AFTER) (WORD | ROLE_WORD))+                                      # afterWordExpression
 ;

@@ -90,28 +90,4 @@ public interface TextExpParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSingleWordExpression(TextExpParser.SingleWordExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code defaultDistanceAfter}
-	 * labeled alternative in {@link TextExpParser#afterword}.
-	 * @param ctx the parse tree
-	 */
-	void enterDefaultDistanceAfter(TextExpParser.DefaultDistanceAfterContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code defaultDistanceAfter}
-	 * labeled alternative in {@link TextExpParser#afterword}.
-	 * @param ctx the parse tree
-	 */
-	void exitDefaultDistanceAfter(TextExpParser.DefaultDistanceAfterContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code distanceAfter}
-	 * labeled alternative in {@link TextExpParser#afterword}.
-	 * @param ctx the parse tree
-	 */
-	void enterDistanceAfter(TextExpParser.DistanceAfterContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code distanceAfter}
-	 * labeled alternative in {@link TextExpParser#afterword}.
-	 * @param ctx the parse tree
-	 */
-	void exitDistanceAfter(TextExpParser.DistanceAfterContext ctx);
 }

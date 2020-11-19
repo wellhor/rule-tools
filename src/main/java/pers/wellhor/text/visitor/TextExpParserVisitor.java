@@ -59,18 +59,4 @@ public interface TextExpParserVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSingleWordExpression(TextExpParser.SingleWordExpressionContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code defaultDistanceAfter}
-	 * labeled alternative in {@link TextExpParser#afterword}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDefaultDistanceAfter(TextExpParser.DefaultDistanceAfterContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code distanceAfter}
-	 * labeled alternative in {@link TextExpParser#afterword}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDistanceAfter(TextExpParser.DistanceAfterContext ctx);
 }

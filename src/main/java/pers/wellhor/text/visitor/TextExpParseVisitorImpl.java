@@ -24,6 +24,8 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
 
     private final static Integer DEFAULT_DISTANCE = 10;
 
+    private final static Integer MIN_AFTER_FIELDS = 2;
+
     private final String context;
 
     private final char[] roleBits;
@@ -139,15 +141,21 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
         return hitResult;
     }
 
-
     @Override
-    public HitResult visitDefaultDistanceAfter(TextExpParser.DefaultDistanceAfterContext ctx) {
-        return this.matchDistance(ctx.getText() + "#" + DEFAULT_DISTANCE);
-    }
-
-    @Override
-    public HitResult visitDistanceAfter(TextExpParser.DistanceAfterContext ctx) {
-        return this.matchDistance(ctx.getText());
+    public HitResult visitAfterWordExpression(TextExpParser.AfterWordExpressionContext ctx) {
+        String express = ctx.getText();
+        String[] fields = express.split("#");
+        if(fields.length <= MIN_AFTER_FIELDS) {
+            return this.matchDistance(ctx.getText() + "#" + DEFAULT_DISTANCE);
+        } else {
+            String lastField = fields[fields.length - 1];
+            try {
+                Integer.parseInt(lastField);
+                return this.matchDistance(ctx.getText());
+            } catch (NumberFormatException e) {
+                return this.matchDistance(ctx.getText() + "#" + DEFAULT_DISTANCE);
+            }
+        }
     }
 
     /**
