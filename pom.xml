@@ -6,7 +6,7 @@
 
     <groupId>pers.wellhor</groupId>
     <artifactId>rule-tools</artifactId>
-    <version>0.0.13</version>
+    <version>0.0.14</version>
 
     <licenses>
         <license>
@@ -32,7 +32,7 @@
         <dependency>
             <groupId>org.antlr</groupId>
             <artifactId>antlr4-runtime</artifactId>
-            <version>4.8-1</version>
+            <version>4.9</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
