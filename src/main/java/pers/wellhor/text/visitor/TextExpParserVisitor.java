@@ -17,20 +17,34 @@ public interface TextExpParserVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitRoot(TextExpParser.RootContext ctx);
+
 	/**
 	 * Visit a parse tree produced by the {@code binaryExpression}
 	 * labeled alternative in {@link TextExpParser#expression}.
+	 *
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitBinaryExpression(TextExpParser.BinaryExpressionContext ctx);
+
+	/**
+	 * Visit a parse tree produced by the {@code starExpress}
+	 * labeled alternative in {@link TextExpParser#expression}.
+	 *
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStarExpress(TextExpParser.StarExpressContext ctx);
+
 	/**
 	 * Visit a parse tree produced by the {@code afterWordExpression}
 	 * labeled alternative in {@link TextExpParser#expression}.
+	 *
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitAfterWordExpression(TextExpParser.AfterWordExpressionContext ctx);
+
 	/**
 	 * Visit a parse tree produced by the {@code notExpression}
 	 * labeled alternative in {@link TextExpParser#expression}.
@@ -38,6 +52,7 @@ public interface TextExpParserVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitNotExpression(TextExpParser.NotExpressionContext ctx);
+
 	/**
 	 * Visit a parse tree produced by the {@code rparenExpression}
 	 * labeled alternative in {@link TextExpParser#expression}.
@@ -45,6 +60,7 @@ public interface TextExpParserVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitRparenExpression(TextExpParser.RparenExpressionContext ctx);
+
 	/**
 	 * Visit a parse tree produced by the {@code roleWordExpression}
 	 * labeled alternative in {@link TextExpParser#expression}.
@@ -52,6 +68,7 @@ public interface TextExpParserVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitRoleWordExpression(TextExpParser.RoleWordExpressionContext ctx);
+
 	/**
 	 * Visit a parse tree produced by the {@code singleWordExpression}
 	 * labeled alternative in {@link TextExpParser#expression}.

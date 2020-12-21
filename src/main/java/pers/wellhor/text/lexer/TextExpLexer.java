@@ -12,8 +12,7 @@ public class TextExpLexer extends Lexer {
 	public static final int
 			LPAREN = 1, RPAREN = 2, AND = 3, OR = 4, NOT = 5, AFTER = 6, ROLE_WORD = 7, WORD = 8,
 			STAR = 9, UPPERCASE = 10, WS = 11;
-
-	protected static final DFA[] _decisionToDFA;
+	public static final String[] ruleNames = makeRuleNames();
 	public static final String _serializedATN =
 			"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2\r9\b\1\4\2\t\2\4" +
 					"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t" +
@@ -31,9 +30,9 @@ public class TextExpLexer extends Lexer {
 					"\2,*\3\2\2\2,-\3\2\2\2-\22\3\2\2\2./\7,\2\2/\24\3\2\2\2\60\61\t\3\2\2" +
 					"\61\26\3\2\2\2\62\64\t\4\2\2\63\62\3\2\2\2\64\65\3\2\2\2\65\63\3\2\2\2" +
 					"\65\66\3\2\2\2\66\67\3\2\2\2\678\b\f\2\28\30\3\2\2\2\5\2,\65\3\b\2\2";
-	public static final String[] ruleNames = makeRuleNames();
 	public static final ATN _ATN =
 			new ATNDeserializer().deserialize(_serializedATN.toCharArray());
+	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 			new PredictionContextCache();
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -45,14 +44,12 @@ public class TextExpLexer extends Lexer {
 	};
 
 	static {
-		RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION);
+		RuntimeMetaData.checkVersion("4.9", RuntimeMetaData.VERSION);
 	}
 
-	private static String[] makeRuleNames() {
-		return new String[]{
-				"LPAREN", "RPAREN", "AND", "OR", "NOT", "AFTER", "ROLE_WORD", "WORD",
-				"STAR", "UPPERCASE", "WS"
-		};
+	public TextExpLexer(CharStream input) {
+		super(input);
+		_interp = new LexerATNSimulator(this, _ATN, _decisionToDFA, _sharedContextCache);
 	}
 
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -63,6 +60,7 @@ public class TextExpLexer extends Lexer {
 	 */
 	@Deprecated
 	public static final String[] tokenNames;
+
 	static {
 		tokenNames = new String[_SYMBOLIC_NAMES.length];
 		for (int i = 0; i < tokenNames.length; i++) {
@@ -89,10 +87,11 @@ public class TextExpLexer extends Lexer {
 		return VOCABULARY;
 	}
 
-
-	public TextExpLexer(CharStream input) {
-		super(input);
-		_interp = new LexerATNSimulator(this, _ATN, _decisionToDFA, _sharedContextCache);
+	private static String[] makeRuleNames() {
+		return new String[]{
+				"LPAREN", "RPAREN", "AND", "OR", "NOT", "AFTER", "ROLE_WORD", "WORD",
+				"STAR", "UPPERCASE", "WS"
+		};
 	}
 
 	private static String[] makeLiteralNames() {

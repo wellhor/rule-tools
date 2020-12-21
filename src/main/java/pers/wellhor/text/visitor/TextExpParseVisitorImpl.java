@@ -18,6 +18,10 @@ import java.util.regex.Pattern;
  **/
 public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult> {
 
+    private final static String AFTER_EXPRESS = "#";
+
+    private final static String OR_EXPRESS = "|";
+
     private final static Pattern ROLE_PATTERN = Pattern.compile("[A-Z]-");
 
     private final static Pattern WORD_ROLE_PATTERN = Pattern.compile("^[A-Z]-");
@@ -52,6 +56,16 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
     }
 
     @Override
+    public HitResult visitStarExpress(TextExpParser.StarExpressContext ctx) {
+        HitResult hitResult = new HitResult().setHit(true);
+        HitResult.HitWord hitWord = new HitResult.HitWord()
+                .setExpress(ctx.getText())
+                .setMsg("*运算符 无内容显示");
+        hitResult.getHitWords().add(hitWord);
+        return hitResult;
+    }
+
+    @Override
     public HitResult visitBinaryExpression(TextExpParser.BinaryExpressionContext ctx) {
         ParseTree leftTree = ctx.getChild(0);
         ParseTree operatorTree = ctx.getChild(1);
@@ -61,7 +75,7 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
         HitResult rightHitResult = getResult(rightTree);
 
         HitResult newHitResult = new HitResult();
-        if("|".equalsIgnoreCase(operatorTree.getText())) {
+        if(OR_EXPRESS.equalsIgnoreCase(operatorTree.getText())) {
             //或运算
             newHitResult.setHit(leftHitResult.isHit() || rightHitResult.isHit());
         } else {
@@ -144,16 +158,16 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
     @Override
     public HitResult visitAfterWordExpression(TextExpParser.AfterWordExpressionContext ctx) {
         String express = ctx.getText();
-        String[] fields = express.split("#");
+        String[] fields = express.split(AFTER_EXPRESS);
         if(fields.length <= MIN_AFTER_FIELDS) {
-            return this.matchDistance(ctx.getText() + "#" + DEFAULT_DISTANCE);
+            return this.matchDistance(ctx.getText() + AFTER_EXPRESS + DEFAULT_DISTANCE);
         } else {
             String lastField = fields[fields.length - 1];
             try {
                 Integer.parseInt(lastField);
                 return this.matchDistance(ctx.getText());
             } catch (NumberFormatException e) {
-                return this.matchDistance(ctx.getText() + "#" + DEFAULT_DISTANCE);
+                return this.matchDistance(ctx.getText() + AFTER_EXPRESS + DEFAULT_DISTANCE);
             }
         }
     }
@@ -326,7 +340,7 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
         while (matcher.find()) {
             String roleStr = matcher.group();
             int start = matcher.start();
-            if(!lastRole.equals("")) {
+            if(!"".equals(lastRole)) {
                 char role = lastRole.charAt(0);
                 for (int i = lastStart; i < start; i++) {
                     bits[i] = role;

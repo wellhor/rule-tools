@@ -18,35 +18,66 @@ public class TextExpParserBaseVisitor<T> extends AbstractParseTreeVisitor<T> imp
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitRoot(TextExpParser.RootContext ctx) { return visitChildren(ctx); }
+	@Override
+	public T visitRoot(TextExpParser.RootContext ctx) {
+		return visitChildren(ctx);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitBinaryExpression(TextExpParser.BinaryExpressionContext ctx) { return visitChildren(ctx); }
+	@Override
+	public T visitBinaryExpression(TextExpParser.BinaryExpressionContext ctx) {
+		return visitChildren(ctx);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAfterWordExpression(TextExpParser.AfterWordExpressionContext ctx) { return visitChildren(ctx); }
+	@Override
+	public T visitStarExpress(TextExpParser.StarExpressContext ctx) {
+		return visitChildren(ctx);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitNotExpression(TextExpParser.NotExpressionContext ctx) { return visitChildren(ctx); }
+	@Override
+	public T visitAfterWordExpression(TextExpParser.AfterWordExpressionContext ctx) {
+		return visitChildren(ctx);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitRparenExpression(TextExpParser.RparenExpressionContext ctx) { return visitChildren(ctx); }
+	@Override
+	public T visitNotExpression(TextExpParser.NotExpressionContext ctx) {
+		return visitChildren(ctx);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override
+	public T visitRparenExpression(TextExpParser.RparenExpressionContext ctx) {
+		return visitChildren(ctx);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 *
@@ -54,6 +85,7 @@ public class TextExpParserBaseVisitor<T> extends AbstractParseTreeVisitor<T> imp
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitRoleWordExpression(TextExpParser.RoleWordExpressionContext ctx) { return visitChildren(ctx); }
+
 	/**
 	 * {@inheritDoc}
 	 *

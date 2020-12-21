@@ -1,4 +1,3 @@
-// Generated from /Users/wellhor/Projects/IdeaProjects/RuleTools/src/main/resources/g4/TextExpParser.g4 by ANTLR 4.8
 package pers.wellhor.text.parser;
 
 import org.antlr.v4.runtime.*;
@@ -23,20 +22,20 @@ public class TextExpParser extends Parser {
 	public static final int
 			RULE_root = 0, RULE_expression = 1;
 	public static final String _serializedATN =
-			"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\r/\4\2\t\2\4\3\t" +
-					"\3\3\2\3\2\3\2\6\2\n\n\2\r\2\16\2\13\3\2\3\2\3\2\3\2\3\2\5\2\23\n\2\3" +
-					"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\6\3!\n\3\r\3\16\3\"\5\3" +
-					"%\n\3\3\3\3\3\3\3\7\3*\n\3\f\3\16\3-\13\3\3\3\2\3\4\4\2\4\2\4\3\2\5\6" +
-					"\3\2\t\n\2\65\2\22\3\2\2\2\4$\3\2\2\2\6\t\5\4\3\2\7\b\t\2\2\2\b\n\5\4" +
-					"\3\2\t\7\3\2\2\2\n\13\3\2\2\2\13\t\3\2\2\2\13\f\3\2\2\2\f\23\3\2\2\2\r" +
-					"\16\5\4\3\2\16\17\7\2\2\3\17\23\3\2\2\2\20\21\7\13\2\2\21\23\7\2\2\3\22" +
-					"\6\3\2\2\2\22\r\3\2\2\2\22\20\3\2\2\2\23\3\3\2\2\2\24\25\b\3\1\2\25\26" +
-					"\7\7\2\2\26%\5\4\3\7\27\30\7\3\2\2\30\31\5\4\3\2\31\32\7\4\2\2\32%\3\2" +
-					"\2\2\33%\7\n\2\2\34%\7\t\2\2\35 \t\3\2\2\36\37\7\b\2\2\37!\t\3\2\2 \36" +
-					"\3\2\2\2!\"\3\2\2\2\" \3\2\2\2\"#\3\2\2\2#%\3\2\2\2$\24\3\2\2\2$\27\3" +
-					"\2\2\2$\33\3\2\2\2$\34\3\2\2\2$\35\3\2\2\2%+\3\2\2\2&\'\f\b\2\2\'(\t\2" +
-					"\2\2(*\5\4\3\t)&\3\2\2\2*-\3\2\2\2+)\3\2\2\2+,\3\2\2\2,\5\3\2\2\2-+\3" +
-					"\2\2\2\7\13\22\"$+";
+			"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\r.\4\2\t\2\4\3\t" +
+					"\3\3\2\3\2\3\2\6\2\n\n\2\r\2\16\2\13\3\2\3\2\3\2\5\2\21\n\2\3\3\3\3\3" +
+					"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\6\3\37\n\3\r\3\16\3 \3\3\5\3$\n" +
+					"\3\3\3\3\3\3\3\7\3)\n\3\f\3\16\3,\13\3\3\3\2\3\4\4\2\4\2\4\3\2\5\6\3\2" +
+					"\t\n\2\64\2\20\3\2\2\2\4#\3\2\2\2\6\t\5\4\3\2\7\b\t\2\2\2\b\n\5\4\3\2" +
+					"\t\7\3\2\2\2\n\13\3\2\2\2\13\t\3\2\2\2\13\f\3\2\2\2\f\21\3\2\2\2\r\16" +
+					"\5\4\3\2\16\17\7\2\2\3\17\21\3\2\2\2\20\6\3\2\2\2\20\r\3\2\2\2\21\3\3" +
+					"\2\2\2\22\23\b\3\1\2\23\24\7\7\2\2\24$\5\4\3\b\25\26\7\3\2\2\26\27\5\4" +
+					"\3\2\27\30\7\4\2\2\30$\3\2\2\2\31$\7\n\2\2\32$\7\t\2\2\33\36\t\3\2\2\34" +
+					"\35\7\b\2\2\35\37\t\3\2\2\36\34\3\2\2\2\37 \3\2\2\2 \36\3\2\2\2 !\3\2" +
+					"\2\2!$\3\2\2\2\"$\7\13\2\2#\22\3\2\2\2#\25\3\2\2\2#\31\3\2\2\2#\32\3\2" +
+					"\2\2#\33\3\2\2\2#\"\3\2\2\2$*\3\2\2\2%&\f\t\2\2&\'\t\2\2\2\')\5\4\3\n" +
+					"(%\3\2\2\2),\3\2\2\2*(\3\2\2\2*+\3\2\2\2+\5\3\2\2\2,*\3\2\2\2\7\13\20" +
+					" #*";
 	public static final ATN _ATN =
 			new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	protected static final DFA[] _decisionToDFA;
@@ -45,7 +44,7 @@ public class TextExpParser extends Parser {
 	public static final String[] ruleNames = makeRuleNames();
 
 	static {
-		RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION);
+		RuntimeMetaData.checkVersion("4.9", RuntimeMetaData.VERSION);
 	}
 
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -63,7 +62,6 @@ public class TextExpParser extends Parser {
 	 */
 	@Deprecated
 	public static final String[] tokenNames;
-
 	static {
 		tokenNames = new String[_SYMBOLIC_NAMES.length];
 		for (int i = 0; i < tokenNames.length; i++) {
@@ -90,16 +88,6 @@ public class TextExpParser extends Parser {
 		return VOCABULARY;
 	}
 
-	@Override
-	public String getGrammarFileName() {
-		return "TextExpParser.g4";
-	}
-
-	@Override
-	public String[] getRuleNames() {
-		return ruleNames;
-	}
-
 	private static String[] makeRuleNames() {
 		return new String[]{
 				"root", "expression"
@@ -120,6 +108,16 @@ public class TextExpParser extends Parser {
 	}
 
 	@Override
+	public String getGrammarFileName() {
+		return "TextExpParser.g4";
+	}
+
+	@Override
+	public String[] getRuleNames() {
+		return ruleNames;
+	}
+
+	@Override
 	public String getSerializedATN() {
 		return _serializedATN;
 	}
@@ -134,7 +132,7 @@ public class TextExpParser extends Parser {
 		enterRule(_localctx, 0, RULE_root);
 		int _la;
 		try {
-			setState(16);
+			setState(14);
 			_errHandler.sync(this);
 			switch (getInterpreter().adaptivePredict(_input, 1, _ctx)) {
 				case 1:
@@ -176,15 +174,6 @@ public class TextExpParser extends Parser {
 					match(EOF);
 				}
 				break;
-				case 3:
-					enterOuterAlt(_localctx, 3);
-				{
-					setState(14);
-					match(STAR);
-					setState(15);
-					match(EOF);
-				}
-				break;
 			}
 		} catch (RecognitionException re) {
 			_localctx.exception = re;
@@ -194,6 +183,10 @@ public class TextExpParser extends Parser {
 			exitRule();
 		}
 		return _localctx;
+	}
+
+	public final ExpressionContext expression() throws RecognitionException {
+		return expression(0);
 	}
 
 	private ExpressionContext expression(int _p) throws RecognitionException {
@@ -208,7 +201,7 @@ public class TextExpParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-				setState(34);
+				setState(33);
 				_errHandler.sync(this);
 				switch (getInterpreter().adaptivePredict(_input, 3, _ctx)) {
 					case 1: {
@@ -216,21 +209,21 @@ public class TextExpParser extends Parser {
 						_ctx = _localctx;
 						_prevctx = _localctx;
 
-						setState(19);
+						setState(17);
 						match(NOT);
-						setState(20);
-						expression(5);
+						setState(18);
+						expression(6);
 					}
 					break;
 					case 2: {
 						_localctx = new RparenExpressionContext(_localctx);
 						_ctx = _localctx;
 						_prevctx = _localctx;
-						setState(21);
+						setState(19);
 						match(LPAREN);
-						setState(22);
+						setState(20);
 						expression(0);
-						setState(23);
+						setState(21);
 						match(RPAREN);
 					}
 					break;
@@ -238,7 +231,7 @@ public class TextExpParser extends Parser {
 						_localctx = new SingleWordExpressionContext(_localctx);
 						_ctx = _localctx;
 						_prevctx = _localctx;
-						setState(25);
+						setState(23);
 						match(WORD);
 					}
 					break;
@@ -246,7 +239,7 @@ public class TextExpParser extends Parser {
 						_localctx = new RoleWordExpressionContext(_localctx);
 						_ctx = _localctx;
 						_prevctx = _localctx;
-						setState(26);
+						setState(24);
 						match(ROLE_WORD);
 					}
 					break;
@@ -254,7 +247,7 @@ public class TextExpParser extends Parser {
 						_localctx = new AfterWordExpressionContext(_localctx);
 						_ctx = _localctx;
 						_prevctx = _localctx;
-						setState(27);
+						setState(25);
 						_la = _input.LA(1);
 						if(!(_la == ROLE_WORD || _la == WORD)) {
 							_errHandler.recoverInline(this);
@@ -263,7 +256,7 @@ public class TextExpParser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(30);
+						setState(28);
 						_errHandler.sync(this);
 						_alt = 1;
 						do {
@@ -271,10 +264,10 @@ public class TextExpParser extends Parser {
 								case 1: {
 									{
 										{
-											setState(28);
+											setState(26);
 											match(AFTER);
 										}
-										setState(29);
+										setState(27);
 										_la = _input.LA(1);
 										if(!(_la == ROLE_WORD || _la == WORD)) {
 											_errHandler.recoverInline(this);
@@ -289,15 +282,23 @@ public class TextExpParser extends Parser {
 								default:
 									throw new NoViableAltException(this);
 							}
-							setState(32);
+							setState(30);
 							_errHandler.sync(this);
 							_alt = getInterpreter().adaptivePredict(_input, 2, _ctx);
 						} while (_alt != 2 && _alt != org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER);
 					}
 					break;
+					case 6: {
+						_localctx = new StarExpressContext(_localctx);
+						_ctx = _localctx;
+						_prevctx = _localctx;
+						setState(32);
+						match(STAR);
+					}
+					break;
 				}
 				_ctx.stop = _input.LT(-1);
-				setState(41);
+				setState(40);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input, 4, _ctx);
 				while (_alt != 2 && _alt != org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER) {
@@ -309,9 +310,9 @@ public class TextExpParser extends Parser {
 								_localctx = new BinaryExpressionContext(new ExpressionContext(_parentctx, _parentState));
 								((BinaryExpressionContext) _localctx).leftExpr = _prevctx;
 								pushNewRecursionContext(_localctx, _startState, RULE_expression);
+								setState(35);
+								if(!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
 								setState(36);
-								if(!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-								setState(37);
 								((BinaryExpressionContext) _localctx).operator = _input.LT(1);
 								_la = _input.LA(1);
 								if(!(_la == AND || _la == OR)) {
@@ -321,12 +322,12 @@ public class TextExpParser extends Parser {
 									_errHandler.reportMatch(this);
 									consume();
 								}
-								setState(38);
-								((BinaryExpressionContext) _localctx).rightExpr = expression(7);
+								setState(37);
+								((BinaryExpressionContext) _localctx).rightExpr = expression(8);
 							}
 						}
 					}
-					setState(43);
+					setState(42);
 					_errHandler.sync(this);
 					_alt = getInterpreter().adaptivePredict(_input, 4, _ctx);
 				}
@@ -352,13 +353,9 @@ public class TextExpParser extends Parser {
 	private boolean expression_sempred(ExpressionContext _localctx, int predIndex) {
 		switch (predIndex) {
 			case 0:
-				return precpred(_ctx, 6);
+				return precpred(_ctx, 7);
 		}
 		return true;
-	}
-
-	public final ExpressionContext expression() throws RecognitionException {
-		return expression(0);
 	}
 
 	public static class RootContext extends ParserRuleContext {
@@ -392,10 +389,6 @@ public class TextExpParser extends Parser {
 
 		public TerminalNode EOF() {
 			return getToken(TextExpParser.EOF, 0);
-		}
-
-		public TerminalNode STAR() {
-			return getToken(TextExpParser.STAR, 0);
 		}
 
 		@Override
@@ -483,106 +476,29 @@ public class TextExpParser extends Parser {
 		}
 	}
 
-	public static class NotExpressionContext extends ExpressionContext {
-		public NotExpressionContext(ExpressionContext ctx) {
+	public static class StarExpressContext extends ExpressionContext {
+		public StarExpressContext(ExpressionContext ctx) {
 			copyFrom(ctx);
 		}
 
-		public TerminalNode NOT() {
-			return getToken(TextExpParser.NOT, 0);
-		}
-
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class, 0);
+		public TerminalNode STAR() {
+			return getToken(TextExpParser.STAR, 0);
 		}
 
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if(listener instanceof TextExpParserListener) ((TextExpParserListener) listener).enterNotExpression(this);
+			if(listener instanceof TextExpParserListener) ((TextExpParserListener) listener).enterStarExpress(this);
 		}
 
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TextExpParserListener ) ((TextExpParserListener)listener).exitNotExpression(this);
-		}
-
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TextExpParserVisitor ) return ((TextExpParserVisitor<? extends T>)visitor).visitNotExpression(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public static class RparenExpressionContext extends ExpressionContext {
-		public TerminalNode LPAREN() { return getToken(TextExpParser.LPAREN, 0); }
-
-		public ExpressionContext expression() {
-			return getRuleContext(ExpressionContext.class,0);
-		}
-
-		public TerminalNode RPAREN() { return getToken(TextExpParser.RPAREN, 0); }
-
-		public RparenExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TextExpParserListener ) ((TextExpParserListener)listener).enterRparenExpression(this);
-		}
-
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TextExpParserListener ) ((TextExpParserListener)listener).exitRparenExpression(this);
-		}
-
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TextExpParserVisitor ) return ((TextExpParserVisitor<? extends T>)visitor).visitRparenExpression(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public static class RoleWordExpressionContext extends ExpressionContext {
-		public TerminalNode ROLE_WORD() { return getToken(TextExpParser.ROLE_WORD, 0); }
-
-		public RoleWordExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TextExpParserListener ) ((TextExpParserListener)listener).enterRoleWordExpression(this);
-		}
-
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TextExpParserListener ) ((TextExpParserListener)listener).exitRoleWordExpression(this);
-		}
-
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TextExpParserVisitor ) return ((TextExpParserVisitor<? extends T>)visitor).visitRoleWordExpression(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public static class SingleWordExpressionContext extends ExpressionContext {
-		public TerminalNode WORD() { return getToken(TextExpParser.WORD, 0); }
-
-		public SingleWordExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
-
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TextExpParserListener ) ((TextExpParserListener)listener).enterSingleWordExpression(this);
-		}
-
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if(listener instanceof TextExpParserListener)
-				((TextExpParserListener) listener).exitSingleWordExpression(this);
+			if(listener instanceof TextExpParserListener) ((TextExpParserListener) listener).exitStarExpress(this);
 		}
 
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if(visitor instanceof TextExpParserVisitor)
-				return ((TextExpParserVisitor<? extends T>) visitor).visitSingleWordExpression(this);
+				return ((TextExpParserVisitor<? extends T>) visitor).visitStarExpress(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -636,6 +552,125 @@ public class TextExpParser extends Parser {
 		}
 	}
 
+	public static class NotExpressionContext extends ExpressionContext {
+		public NotExpressionContext(ExpressionContext ctx) {
+			copyFrom(ctx);
+		}
+
+		public TerminalNode NOT() {
+			return getToken(TextExpParser.NOT, 0);
+		}
+
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class, 0);
+		}
+
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if(listener instanceof TextExpParserListener) ((TextExpParserListener) listener).enterNotExpression(this);
+		}
+
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof TextExpParserListener ) ((TextExpParserListener)listener).exitNotExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TextExpParserVisitor ) return ((TextExpParserVisitor<? extends T>)visitor).visitNotExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public static class RparenExpressionContext extends ExpressionContext {
+		public RparenExpressionContext(ExpressionContext ctx) {
+			copyFrom(ctx);
+		}
+
+		public TerminalNode LPAREN() {
+			return getToken(TextExpParser.LPAREN, 0);
+		}
+
+		public ExpressionContext expression() {
+			return getRuleContext(ExpressionContext.class, 0);
+		}
+
+		public TerminalNode RPAREN() {
+			return getToken(TextExpParser.RPAREN, 0);
+		}
+
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if(listener instanceof TextExpParserListener)
+				((TextExpParserListener) listener).enterRparenExpression(this);
+		}
+
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if(listener instanceof TextExpParserListener) ((TextExpParserListener) listener).exitRparenExpression(this);
+		}
+
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TextExpParserVisitor ) return ((TextExpParserVisitor<? extends T>)visitor).visitRparenExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public static class RoleWordExpressionContext extends ExpressionContext {
+		public RoleWordExpressionContext(ExpressionContext ctx) {
+			copyFrom(ctx);
+		}
+
+		public TerminalNode ROLE_WORD() {
+			return getToken(TextExpParser.ROLE_WORD, 0);
+		}
+
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if(listener instanceof TextExpParserListener)
+				((TextExpParserListener) listener).enterRoleWordExpression(this);
+		}
+
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if(listener instanceof TextExpParserListener)
+				((TextExpParserListener) listener).exitRoleWordExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof TextExpParserVisitor ) return ((TextExpParserVisitor<? extends T>)visitor).visitRoleWordExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public static class SingleWordExpressionContext extends ExpressionContext {
+		public SingleWordExpressionContext(ExpressionContext ctx) {
+			copyFrom(ctx);
+		}
+
+		public TerminalNode WORD() {
+			return getToken(TextExpParser.WORD, 0);
+		}
+
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if(listener instanceof TextExpParserListener)
+				((TextExpParserListener) listener).enterSingleWordExpression(this);
+		}
+
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if(listener instanceof TextExpParserListener)
+				((TextExpParserListener) listener).exitSingleWordExpression(this);
+		}
+
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if(visitor instanceof TextExpParserVisitor)
+				return ((TextExpParserVisitor<? extends T>) visitor).visitSingleWordExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 	static {
 		_decisionToDFA = new DFA[_ATN.getNumberOfDecisions()];
 		for (int i = 0; i < _ATN.getNumberOfDecisions(); i++) {

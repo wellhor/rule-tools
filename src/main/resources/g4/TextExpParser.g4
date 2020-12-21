@@ -5,7 +5,7 @@ options {
     language = Java;
 }
 
-root :  expression ((AND | OR) expression)+ | expression EOF | STAR EOF;
+root :  expression ((AND | OR) expression)+ | expression EOF;
 
 expression :
         leftExpr = expression operator = (AND | OR) rightExpr = expression                      # binaryExpression
@@ -14,4 +14,5 @@ expression :
         | WORD                                                                                  # singleWordExpression
         | ROLE_WORD                                                                             # roleWordExpression
         | (WORD | ROLE_WORD) ((AFTER) (WORD | ROLE_WORD))+                                      # afterWordExpression
+        | STAR                                                                                  # starExpress
 ;
