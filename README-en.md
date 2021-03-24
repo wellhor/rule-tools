@@ -1,6 +1,6 @@
 # RuleTools
 
-[![RuleTools v0.0.14](https://img.shields.io/badge/RuleTools-v0.0.14-orange)](https://github.com/wellhor/RuleTools)
+[![RuleTools v0.0.15](https://img.shields.io/badge/RuleTools-v0.0.15-orange)](https://github.com/wellhor/RuleTools)
 [![JitPack](https://www.jitpack.io/v/wellhor/rule-tools.svg)](https://www.jitpack.io/#wellhor/rule-tools)
 [![Java 8+](https://img.shields.io/badge/java-8+-4c7e9f.svg)](http://java.oracle.com)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/wellhor/RuleTools/blob/master/LICENSE)
@@ -42,7 +42,7 @@
 </repositories>
 ```
 
-### Step 2. Add the dependence  [![RuleTools 0.0.14](https://img.shields.io/badge/LatestVersion-0.0.14-orange)](https://github.com/wellhor/RuleTools)
+### Step 2. Add the dependence  [![RuleTools 0.0.15](https://img.shields.io/badge/LatestVersion-0.0.15-orange)](https://github.com/wellhor/RuleTools)
 
 ```
 <dependency>
