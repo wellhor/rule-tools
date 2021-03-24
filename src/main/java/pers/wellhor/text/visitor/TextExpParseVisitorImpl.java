@@ -149,7 +149,7 @@ public class TextExpParseVisitorImpl extends TextExpParserBaseVisitor<HitResult>
                 HitResult.HitWord hitWord = new HitResult.HitWord().setExpress(text);
                 hitWord.addIndex(new Index(null, text, index, index + text.length() - 1));
                 hitResult.getHitWords().add(hitWord);
-                offset += index + text.length();
+                offset = index + text.length();
             }
         }
         return hitResult;
