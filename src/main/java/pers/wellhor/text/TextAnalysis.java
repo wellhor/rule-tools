@@ -5,6 +5,7 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import pers.wellhor.text.exception.TextGrammarException;
+import pers.wellhor.text.exception.TextLexerErrorListener;
 import pers.wellhor.text.exception.TextParseErrorListener;
 import pers.wellhor.text.hl.BitMap;
 import pers.wellhor.text.hl.HighLight;
@@ -65,6 +66,7 @@ public final class TextAnalysis {
     public static ParseTree getParseTree(String formula) throws TextGrammarException {
         CharStream input = CharStreams.fromString(formula);
         TextExpLexer lexer = new TextExpLexer(input);
+        lexer.addErrorListener(TextLexerErrorListener.INSTANCE);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         TextExpParser parser = new TextExpParser(tokens);
         parser.removeErrorListeners();
